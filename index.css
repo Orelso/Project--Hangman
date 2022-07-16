@@ -1,0 +1,137 @@
+/* Color Variables */
+/* Mixin's */
+/* Mixin's end */
+body {
+  background: #392f2f;
+  font-family: Marker Felt, fantasy;
+  color: #3a7563;
+  text-align: center;
+  font-size: 18px;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Hangman Caricature */
+canvas {
+  color: #fff;
+  border: #e6d3a7 solid 10px;
+  padding: 15px;
+}
+
+/* HTML, CSS = id's */
+h1 {
+  font-family: Chalkduster, fantasy;
+  font-size: 3em;
+}
+
+p {
+  font-size: 1.6em;
+  color: #59a985;
+}
+
+/* Javascript id's*/
+#alphabet {
+  margin: 15px auto;
+  padding: 0;
+  max-width: 900px;
+}
+#alphabet:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#alphabet li {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  list-style: none;
+  width: 35px;
+  height: 30px;
+  padding-top: 10px;
+  background: #59a985;
+  color: #e6d3a7;
+  cursor: pointer;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border: solid 1px #fff;
+}
+#alphabet li:hover {
+  background: #59a985;
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display: block;
+  color: #e6d3a7;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1.6em;
+}
+
+.active {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  cursor: default;
+}
+.active:hover {
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+/* HTML, JS = id's */
+#mylives {
+  font-size: 1.6em;
+  text-align: center;
+  display: block;
+}
+
+button {
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+  background-color: #3a7563;
+  color: #e6d3a7;
+  cursor: pointer;
+}
+button:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #59a985;
+}
+
+/* screen resolution when re-sized */
+@media (max-width: 767px) {
+  #alphabet {
+    padding: 0 0 0 15px;
+  }
+}
+@media (max-width: 480px) {
+  #alphabet {
+    padding: 0 0 0 25px;
+  }
+}/*# sourceMappingURL=index.css.map */

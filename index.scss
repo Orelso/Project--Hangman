@@ -1,0 +1,177 @@
+/* Color Variables */
+$black: #392f2f;
+$darkgreen: #3a7563;
+$green: #59a985;
+$beige: #e6d3a7;
+$white: #fff;
+
+/* Mixin's */
+
+@mixin transition {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin clear {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin box-size {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin transition {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin fade {
+    -moz-transition: all 1s ease-in;
+    -moz-transition:all 0.3s ease-in-out;
+    -webkit-transition:all 0.3s ease-in-out;
+}
+
+@mixin opacity {
+    opacity:0.4;
+    filter:alpha(opacity=40); 
+    @include fade;
+}
+
+@mixin corners ($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius; 
+    -khtml-border-radius: $radius; 
+}
+
+/* Mixin's end */
+
+body {
+    background: $black;
+    font-family: Marker Felt, fantasy;
+    color: $darkgreen;
+    // height: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.wrapper{
+    @include clear;
+    width:100%;
+    margin:0 auto;
+}
+
+/* Hangman Caricature */
+canvas {
+    color: $white;
+    border: $beige solid 10px;
+    padding: 15px;
+}
+
+/* HTML, CSS = id's */
+h1{
+    font-family: Chalkduster, fantasy;
+    // font-weight: 100;
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.6em;
+    color: $green;
+}
+
+/* Javascript id's*/
+#alphabet {
+    @include clear;
+    margin:15px auto;
+    padding:0;
+    max-width:900px;
+}
+
+#alphabet li {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    list-style:none;
+    width:35px;
+    height:30px;
+    padding-top:10px;
+    background:$green;
+    color: $beige;
+    cursor:pointer;
+    @include corners(5px);
+    border: solid 1px $white;
+
+        &:hover{
+        background:$green;
+        border: solid 1px $white;
+        color:$white;
+    }
+}
+
+#my-word {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display:block;
+    color: $beige;
+}
+
+#my-word li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+    padding: 0 10px;
+    font-size:1.6em;
+}
+
+.active {
+    @include opacity;
+    cursor:default; 
+    &:hover{
+        @include fade;
+        @include opacity;
+    }
+}
+
+/* HTML, JS = id's */
+#mylives {
+    font-size:1.6em;
+    text-align:center;
+    display:block;
+}
+
+button {
+    @include corners (5px);
+    background-color: $darkgreen;
+    color: $beige;
+    cursor: pointer;
+
+        &:hover {
+            @include transition;
+            background-color: $green;
+        }
+}
+
+/* screen resolution when re-sized */
+@media (max-width: 767px) {
+    #alphabet {
+    padding:0 0 0 15px;
+    }
+}
+
+    @media (max-width: 480px) {
+    #alphabet {
+    padding:0 0 0 25px;
+    }
+}
+
+
